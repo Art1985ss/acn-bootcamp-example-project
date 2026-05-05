@@ -115,6 +115,8 @@ jobs:
         docker run -d \
           --name $APP_CONTAINER_NAME \
           --restart unless-stopped \
+          --label bootcamp.environment=prod \
+          --label bootcamp.team=2 \
           -p $SERVER_PORT:$SERVER_PORT \
           -e SERVER_PORT=$SERVER_PORT \
           -e DEPLOYMENT_BRANCH="$DEPLOYMENT_BRANCH" \
